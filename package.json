@@ -2,15 +2,23 @@
   "name": "react-table-pdf",
   "private": false,
   "version": "1.0.1",
-  "description": "",
+  "description": "customizable pdf table with react and ts",
   "keywords": [
     "pdf",
     "react-pdf",
+    "react-table-pdf",
     "ts"
   ],
   "main": "lib/index.js",
   "types": "lib",
-  "author": "",
+  "author": "AhmedNassar147",
+  "bugs": {
+    "url": "https://github.com/AhmedNassar147/react-table-pdf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AhmedNassar147/react-table-pdf"
+  },
   "license": "ISC",
   "scripts": {
     "build": "tsc -p ."
