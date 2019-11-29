@@ -36,7 +36,7 @@ import {
 | rowKey         |                                                             `string | (row, index) => string`                                                              |   true   |
 | style          |              <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/interfaces/styles.interface.ts">Style </a>              |  false   |
 | headerRowStyle |              <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/interfaces/styles.interface.ts">Style </a>              |  false   |
-| rowStyle       | <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/interfaces/styles.interface.ts">`(row, index) => Style | Style` </a> |  false   |
+| rowStyle       | <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/interfaces/styles.interface.ts"> Style or (row, index) => Style </a> |  false   |
 
 ## TableRow Props
 
