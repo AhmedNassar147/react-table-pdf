@@ -29,14 +29,14 @@ import {
 
 ## Table Props
 
-| Name           |                                                    Type                                                     |                                                     Required                                                      |
-| :------------- | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
-| columns        |                                                    Array                                                    |                                                       true                                                        |
-| dataSource     |                                                    Array                                                    |                                                       true                                                        |
-| rowKey         |                                                   string                                                    |                                                   () => string                                                    | true |
-| style          | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |                                                       false                                                       |
-| headerRowStyle | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |                                                       false                                                       |
-| rowStyle       | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> | () => <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> | false |
+| Name           |                                                                 Type                                                                  | Required |
+| :------------- | :-----------------------------------------------------------------------------------------------------------------------------------: | :------: |
+| columns        |                                                                 Array                                                                 |   true   |
+| dataSource     |                                                                 Array                                                                 |   true   |
+| rowKey         |                                                   `string | (row, index) => string`                                                   |   true   |
+| style          |              <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a>              |  false   |
+| headerRowStyle |              <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a>              |  false   |
+| rowStyle       | <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">`(row, index) => Style | Style` </a> |  false   |
 
 ## TableRow Props
 
@@ -44,7 +44,7 @@ import {
 | :------- | :---------------------------------------------------------------------------------------------------------: | :------: |
 | children |                                                    Array                                                    |   true   |
 | isHeader |                                                   boolean                                                   |  false   |
-| style    | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |  false   |
+| style    | <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |  false   |
 
 ## TableCell Props
 
@@ -52,4 +52,4 @@ import {
 | :------- | :---------------------------------------------------------------------------------------------------------: | :------: |
 | children |                                                    text                                                     |   true   |
 | noBorder |                                                   boolean                                                   |  false   |
-| style    | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |  false   |
+| style    | <a href="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |  false   |
