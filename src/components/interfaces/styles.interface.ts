@@ -147,7 +147,3 @@ export interface Style {
   borderBottomLeftRadius?: number | string;
   borderRadius?: number | string;
 }
-
-interface Styles {
-  [key: string]: Style;
-}

@@ -1,4 +1,6 @@
-import { StyleSheet } from "@react-pdf/renderer";
+import ReactPDF from "@react-pdf/renderer";
+
+const { StyleSheet } = ReactPDF;
 
 export default StyleSheet.create({
   fullWidth: {
@@ -13,8 +15,8 @@ export default StyleSheet.create({
     borderTopColor: "#b0e4ff",
     borderBottomColor: "#b0e4ff",
     borderTopWidth: 1,
-    borderBottomWidth: 1,
-    justifyContent: "stretch"
+    borderBottomWidth: 1
+    // justifyContent: "stretch"
   },
   headerRowStyle: {
     backgroundColor: "#6f42c1",
@@ -32,9 +34,9 @@ export default StyleSheet.create({
     height: "100%",
     flex: 1,
     justifyContent: "center",
-    textAlign: "center",
-    wordWrap: "break-word",
-    whiteSpace: "pre-wrap"
+    textAlign: "center"
+    // wordWrap: "break-word",
+    // whiteSpace: "pre-wrap"
   },
   cellOtherStyles: {
     borderRight: 1,

@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "@react-pdf/renderer";
 import styles from "./styles";
 import Cell from "./Cell";
-import { isThereData } from "./utils";
+import { isThereData, renderStyleProps } from "./utils";
 import Props, { ChildItem } from "./interfaces/row.interface";
 
 const { useMemo, memo, useCallback } = React;
@@ -41,6 +41,8 @@ const TableRow: React.FC<Props> = ({
     []
   );
 
+  const addtionalStyle = useMemo(() => renderStyleProps(style), [style]);
+
   const renderCells = useMemo(() => {
     if (isThereData(children)) {
       const length = children.length;
@@ -52,7 +54,14 @@ const TableRow: React.FC<Props> = ({
   }, [children, cellRenderer]);
 
   return (
-    <View style={[styles.fullWidth, styles.rowStyle, expensiveStyle, style]}>
+    <View
+      style={[
+        styles.fullWidth,
+        styles.rowStyle,
+        expensiveStyle,
+        addtionalStyle
+      ]}
+    >
       {renderCells}
     </View>
   );

@@ -2,7 +2,13 @@ import React from "react";
 import { View } from "@react-pdf/renderer";
 import styles from "./styles";
 import TableRow from "./Row";
-import { normalizer, BodyDataItem } from "./utils";
+import {
+  normalizer,
+  renderRowKey,
+  renderRowStyle,
+  normalizeChildren,
+  renderStyleProps
+} from "./utils";
 import TableProps from "./interfaces/table.interface";
 import { ChildItem } from "./interfaces/row.interface";
 
@@ -23,70 +29,17 @@ const Table: React.FC<TableProps> = ({
     memorizedNormalizer
   ]);
 
-  const getResponse = useCallback(
-    (fn: Function | string | undefined, data: object, idx: number) => {
-      return typeof fn === "function" ? fn(data, idx) : fn;
-    },
-    []
-  );
-
   const getRowKey = useCallback(
-    (rowItemData: object, idx: number) => {
-      if (!rowKey) {
-        console.warn(
-          "Each record in dataSource of table should have a unique `key` prop, " +
-            "or set `rowKey` of Table to an unique primary key"
-        );
-        return "";
-      } else {
-        const key: string = getResponse(rowKey, rowItemData, idx);
-        return (rowItemData as any)[key];
-      }
-    },
-    [rowKey, getResponse]
+    (rowItem, idx) => renderRowKey(rowItem, idx, rowKey),
+    [rowKey, renderRowKey]
   );
 
   const getRowStyle = useCallback(
-    (rowItemData, idx) => {
-      if (typeof rowStyle === "function") {
-        return getResponse(rowStyle, rowItemData, idx);
-      } else {
-        return rowStyle;
-      }
-    },
-    [rowStyle, getResponse]
+    (rowItemData, idx) => renderRowStyle(rowItemData, idx, rowStyle),
+    [rowStyle, renderRowStyle]
   );
 
-  const renderChildren = useCallback(
-    (row: object, idx: number) => (itemValueRenderer: BodyDataItem) => {
-      const { key, valueDataIndex } = itemValueRenderer;
-      const idxKey = idx.toString();
-      if (typeof valueDataIndex === "function") {
-        return {
-          key: key || idxKey,
-          title: valueDataIndex(row, idx)
-        };
-      } else if (
-        typeof valueDataIndex === "object" &&
-        Array.isArray(itemValueRenderer)
-      ) {
-        return valueDataIndex.map(({ dataIndex, key }) => ({
-          title: (row as any)[dataIndex],
-          key: key || idxKey
-        }));
-      } else {
-        let res = {
-          key: key || idxKey,
-          title: ""
-        };
-        if (valueDataIndex && typeof valueDataIndex === "string") {
-          res.title = (row as any)[valueDataIndex];
-        }
-        return res;
-      }
-    },
-    []
-  );
+  const renderChildren = useCallback(normalizeChildren, []);
 
   const renderBody = useMemo(() => {
     return (
@@ -104,8 +57,10 @@ const Table: React.FC<TableProps> = ({
     );
   }, [bodyData, dataSource, getRowKey, rowStyle, getRowStyle, renderChildren]);
 
+  const addtionalStyle = useMemo(() => renderStyleProps(style), [style]);
+
   return (
-    <View style={[styles.fullWidth, style]}>
+    <View style={[styles.fullWidth, addtionalStyle]}>
       <TableRow isHeader style={headerRowStyle}>
         {headerData}
       </TableRow>

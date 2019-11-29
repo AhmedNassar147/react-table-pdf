@@ -1,17 +1,20 @@
-import React from "react";
+import {
+  excuteFnOrReturnMe,
+  isThereData,
+  normalizer,
+  renderRowStyle,
+  renderRowKey
+} from "./components/utils";
 
-interface Props {
-  text: string;
-}
+export { default as Table } from "./components/Table";
+export { default as TableRow } from "./components/Row";
+export { default as TableCell } from "./components/Cell";
+export { default as TableUtils } from "./components/utils";
 
-const App: React.FC<Props> = (props: Props): JSX.Element => {
-  return (
-    <div>
-      <p>{props.text}</p>
-    </div>
-  );
-};
-
-App.defaultProps = {
-  text: "hello"
+export {
+  excuteFnOrReturnMe,
+  isThereData,
+  normalizer,
+  renderRowStyle,
+  renderRowKey
 };
