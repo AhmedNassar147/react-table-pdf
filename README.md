@@ -2,8 +2,6 @@
 
 **Note: This Library based on @react-pdf/renderer**
 
-## we provide utils and buildin Views so if you want to build your own Table
-
 ## How to install
 
 ```sh
@@ -11,120 +9,47 @@ yarn add react-table-pdf
 npm i react-table-pdf
 ```
 
+## 🔨 Usage
+
+```jsx
+import { Table, TableRow, TableCell } from "react-table-pdf";
+```
+
+## also we provide utils so if you want to build your own Table
+
+```jsx
+import {
+  excuteFnOrReturnMe,
+  isThereData,
+  normalizer,
+  renderRowStyle,
+  renderRowKey
+} from "react-table-pdf";
+```
+
 ## Table Props
 
-<table>
-	<thead>
-    <tr>
-      <th align="center" valign="top"> Name</th>
-      <th align="center" valign="top"> type</th>
-      <th align="center" valign="top"> required</th>
-    </tr>
-  </thead>
-
-  <tbody>
-		<tr>
-      <td align="center" valign="top">columns</td>
-      <td align="center" valign="top">Array</td>
-			<td align="center" valign="top">true</td>
-		</tr>
-
-    <tr>
-      <td align="center" valign="top">dataSource</td>
-      <td align="center" valign="top">Array</td>
-    		<td align="center" valign="top">true</td>
-    	</tr>
-
-    <tr>
-      <td align="center" valign="top">rowKey</td>
-      <td align="center" valign="top">string | () => string</td>
-    		<td align="center" valign="top">true</td>
-    	</tr>
-
-    <tr>
-      <td align="center" valign="top">style</td>
-      <td align="center" valign="top">Style</td>
-    		<td align="center" valign="top">false</td>
-    	</tr>
-
-    <tr>
-      <td align="center" valign="top">headerRowStyle</td>
-      <td align="center" valign="top">Style</td>
-    		<td align="center" valign="top">false</td>
-    	</tr>
-
-    <tr>
-      <td align="center" valign="top">rowStyle</td>
-      <td align="center" valign="top">Style | () => <Style>{} </td>
-    		<td align="center" valign="top">false</td>
-    	</tr>
-    </tbody>
-
-</table>
+| Name           |                                                    Type                                                     |                                                     Required                                                      |
+| :------------- | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| columns        |                                                    Array                                                    |                                                       true                                                        |
+| dataSource     |                                                    Array                                                    |                                                       true                                                        |
+| rowKey         |                                                   string                                                    |                                                   () => string                                                    | true |
+| style          | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |                                                       false                                                       |
+| headerRowStyle | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |                                                       false                                                       |
+| rowStyle       | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> | () => <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> | false |
 
 ## TableRow Props
 
-<table>
-	<thead>
-    <tr>
-      <th align="center" valign="top"> Name</th>
-      <th align="center" valign="top"> type</th>
-      <th align="center" valign="top"> required</th>
-    </tr>
-  </thead>
-
-  <tbody>
-		<tr>
-      <td align="center" valign="top">children</td>
-      <td align="center" valign="top">Array</td>
-			<td align="center" valign="top">true</td>
-		</tr>
-
-    <tr>
-      <td align="center" valign="top">isHeader</td>
-      <td align="center" valign="top">boolean</td>
-    	<td align="center" valign="top">false</td>
-    	</tr>
-
-    <tr>
-      <td align="center" valign="top">style</td>
-      <td align="center" valign="top">Style</td>
-    		<td align="center" valign="top">false</td>
-    	</tr>
-    </tbody>
-
-</table>
+| Name     |                                                    Type                                                     | Required |
+| :------- | :---------------------------------------------------------------------------------------------------------: | :------: |
+| children |                                                    Array                                                    |   true   |
+| isHeader |                                                   boolean                                                   |  false   |
+| style    | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |  false   |
 
 ## TableCell Props
 
-<table>
-	<thead>
-    <tr>
-      <th align="center" valign="top"> Name</th>
-      <th align="center" valign="top"> type</th>
-      <th align="center" valign="top"> required</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td align="center" valign="top">children</td>
-      <td align="center" valign="top">text</td>
-    	<td align="center" valign="top">true</td>
-    	</tr>
-
-    	<tr>
-      <td align="center" valign="top">noBorder</td>
-      <td align="center" valign="top">boolean</td>
-    		<td align="center" valign="top">false</td>
-    	</tr>
-
-
-    <tr>
-      <td align="center" valign="top">style</td>
-      <td align="center" valign="top">Style</td>
-    		<td align="center" valign="top">false</td>
-    	</tr>
-    </tbody>
-
-</table>
+| Name     |                                                    Type                                                     | Required |
+| :------- | :---------------------------------------------------------------------------------------------------------: | :------: |
+| children |                                                    text                                                     |   true   |
+| noBorder |                                                   boolean                                                   |  false   |
+| style    | <a herf="https://github.com/AhmedNassar147/react-table-pdf/blob/master/src/components/styles.js">Style </a> |  false   |
